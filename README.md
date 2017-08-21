@@ -1,6 +1,6 @@
 # WP-HTNonce
 Protyping for a improved management of Wordpress Nonces.
-Providing an extensible validator implementation for the built-in WordPress Nonces eco-system.
+Providing an extensible validator implementation on top of the built-in WordPress Nonces eco-system.
 
 Installation
 ------------
@@ -15,7 +15,7 @@ HTNonce is implemented as a WordPress Plugin with composer support.
     $ composer install
 ```
 
-* Or add the following line to the `require` section of your project's existing `compoers.json` file:
+* Or add the following line to the `require` section of your project's existing `composer.json` file:
 
 ```json
     "require": {
@@ -32,7 +32,7 @@ then to install the dependencies run :
 
 Follow the instructions in the `Manual Plugin Installation` section at:
 
-[Wordpress Pluging Installation](https://codex.wordpress.org/Managing_Plugins)
+[Wordpress Plugin Installation](https://codex.wordpress.org/Managing_Plugins)
 
 
 Usage
@@ -41,13 +41,13 @@ Usage
 The usage is straight forward. For detailed informations on the internal functionings, check the inline-documentations inside the class source files.
 
 
-Create nonce with context name `delete-post:16` if not used, throw exception if context name in use by another nonce:
+Create nonce with context name `delete-post:16` if not used, otherwise throw exception if context name in use by another nonce:
 ```php
 <?php
 $nonce = new HTNonce('delete-post:16');
 ```
 
-Create nonce with context name `delete-post:16` if not used, load existing if context name already in use by another nonce:
+Create nonce with context name `delete-post:16` if not used, otherwise load existing if context name already in use by another nonce:
 ```php
 <?php
 $nonce = new HTNonce('delete-post:16', HTNonce::OPTION_FORCELOAD);
@@ -58,7 +58,7 @@ or
 $nonce = new HTNonce::get_nonce('delete-post:16');
 ```
 
-Create nonce with context name `delete-post:16` if not used, overwrite if context name already in use by another nonce:
+Create nonce with context name `delete-post:16` if not used, otherwise overwrite if context name already in use by another nonce:
 ```php
 <?php
 $nonce = new HTNonce('delete-post:16', HTNonce::OPTION_FORCECREATE);
@@ -77,7 +77,7 @@ $nonce = new HTNonce('delete-post:16', NULL, array(new HTNonceOnceValidator()));
 
 ***
 
-After having successfully initialized a HTNonce instance, following methods can utilized:
+After having successfully initialized a HTNonce instance, following methods can be utilized:
 
 Create url for current nonce instance:
 ```php
