@@ -1,0 +1,23 @@
+{
+    "name": "ht/wp-htnonce",
+    "description": "Protyping for a improved management of Wordpress Nonces.",
+    "type": "library",
+    "keywords": ["WordPress", "Nonce"],
+    "homepage": "https://github.com/halittiryaki/WP-HTNonce",
+    "require": {
+        "php": "^5.5"
+    },
+    "authors": [
+        {
+            "name": "Halit TIRYAKI",
+            "email": "halit.tiryaki@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/halittiryaki/WP-HTNonce"
+        }
+    ]
+}
