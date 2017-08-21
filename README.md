@@ -1,5 +1,5 @@
 # WP-HTNonce
-Protyping for a improved management of Wordpress Nonces.
+Prototyping for a improved management of Wordpress Nonces.
 Providing an extensible validator implementation on top of the built-in WordPress Nonces eco-system.
 
 Installation
