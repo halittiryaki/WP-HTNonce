@@ -41,6 +41,13 @@ Class HTNonce {
     const NONCE_PREFIX = 'HTN_';
 
     /**
+    * Default constructor option to throw an exception if a nonce is existing with the same action context name.
+    *
+    * @var int OPTION_NONE
+    */
+    const OPTION_NONE = -1;
+
+    /**
     * Constructor option to force a retrieval of a nonce if one is existing with the same action context name.
     * A new one will be created if not.
     *
@@ -275,7 +282,7 @@ Class HTNonce {
     * @param int $option OPTION_FORCELOAD|OPTION_FORCECREATE options supported
     * @param array $validators An array containing instances of validators implementing the IHTNoncesValidator interface
     */
-    private function nonce_start ( $name, $option = NULL, $validators = NULL ) {
+    private function nonce_start ( $name, $option = self::OPTION_NONE, $validators = NULL ) {
         $this->handle = NULL;
         $this->name = $name;
 
@@ -290,7 +297,7 @@ Class HTNonce {
                 $this->handle = $this->get_sess_var('handle'); //load existing nonce handle
             } elseif ( $option === self::OPTION_FORCECREATE ) { // option force create is given
                 $this->reset_session(); // unset all session data
-            } else { // no specific option is given
+            } else { // default to OPTION_NONE
                 throw new Exception('A nonce action with this context already exists! (' . $name . ')');
             }
         } 
