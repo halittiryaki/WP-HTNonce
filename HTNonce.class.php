@@ -279,7 +279,7 @@ Class HTNonce {
     * Helper function to intialize this instance.
     *
     * @param string $name The action context name for this instance
-    * @param int $option OPTION_FORCELOAD|OPTION_FORCECREATE options supported
+    * @param int $option OPTION_FORCELOAD|OPTION_FORCECREATE|OPTION_NONE options supported
     * @param array $validators An array containing instances of validators implementing the IHTNoncesValidator interface
     */
     private function nonce_start ( $name, $option = self::OPTION_NONE, $validators = NULL ) {
