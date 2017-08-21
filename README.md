@@ -9,13 +9,13 @@ HTNonce is implemented as a WordPress Plugin with composer support.
 
 1. Checkout
 
-⋅⋅* Simply clone the project directly from the GitHub repository and to install dependencies run:
+* Simply clone the project directly from the GitHub repository and to install dependencies run:
 
 ```bash
     $ composer install
 ```
 
-⋅⋅* Or add the following line to the `require` section of your project's existing `compoers.json` file:
+* Or add the following line to the `require` section of your project's existing `compoers.json` file:
 
 ```json
     "require": {
